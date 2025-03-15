@@ -5,8 +5,12 @@
   {% if car_list %}
     <ul>
       {% for car in car_list %}
-        <li><a href="{%  url 'taxi:car-detail' car.id %}">{{ car.model }}</a></li>
+        <li> Car Id:
+          <a href="{% url 'taxi:car-detail' car.pk %}"> {{ car.id }}</a><br>
+          Model: {{ car.model }}</li>
       {% endfor %}
     </ul>
+    {% else %}
+      <p>There are no cars</p>
   {% endif %}
 {% endblock %}
